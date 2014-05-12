@@ -1,6 +1,8 @@
-__author__ = 'Sanket'
 from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
-    url(r'^/', include(contact.urls)),
+    # Examples:
+    # url(r'^$', 'django_contactform.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+    url(r'^$', 'contact.views.contact', name="contact"),
 )
