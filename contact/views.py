@@ -10,11 +10,16 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             cd = form.cleaned_data
+            message = "You have received the following message \n\nName: "+cd['name']+"\n\nMessage: \n"
+            message += cd['message']
+            recipients = ['sanke93@gmail.com']
+            if cd['cc_myself']:
+                recipients.append(cd.get('email'))
             send_mail(
-                cd['subject'],
-                cd['message'],
+                "[Contact Form Message] "+cd['subject'],
+                message,
                 cd.get('email'),
-                ['sanke93@gmail.com'], #email address where message is sent.
+                recipients, #email address where message is sent.
             )
             return HttpResponseRedirect('thanks/')
     else:
