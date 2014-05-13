@@ -85,6 +85,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#templates
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 #for emails
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
