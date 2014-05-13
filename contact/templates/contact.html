@@ -3,5 +3,18 @@
 {% block title %} Contact Page{% endblock %}
 
 {% block content %}
-    hi
+    {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form action="" method="post">
+          <table>
+                {{ form.as_table }}
+          </table>
+          {% csrf_token %}
+          <input type="submit" value="Submit">
+    </form>
 {% endblock %}
