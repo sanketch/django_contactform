@@ -3,7 +3,7 @@ Django Contact Form
 
 Contact form application that can be used in with any Django Project!
 
-Currently not a package so in order to add this to your project:
+Currently not a package so in order to add this to your project:   
 1. Download the zip file and put the contact folder into your Django project directory.   
  
 2. Add ``'contact',`` to your settings.py   
